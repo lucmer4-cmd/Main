@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Formations GTI - SPVV Verscity</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-main:#05070a;
+            --bg-card:#11151c;
+            --bg-card-soft:#161b25;
+            --accent:#f5b300;
+            --accent-secondary:#4dabf7;
+            --text-main:#f5f5f5;
+            --text-muted:#a0a4b0;
+            --border-soft:#252a36;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{
+            font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+            background:#05070a;
+            color:var(--text-main);
+            line-height:1.6;
+        }
+        a{color:inherit;text-decoration:none;}
+        header{
+            border-bottom:1px solid var(--border-soft);
+            background:linear-gradient(135deg,#05070a,#111523);
+            padding:10px 16px;
+        }
+        .header-inner{
+            max-width:1100px;margin:0 auto;
+            display:flex;align-items:center;justify-content:space-between;gap:10px;
+        }
+        .header-left{display:flex;align-items:center;gap:10px;}
+        .logo-circle{
+            width:50px;height:50px;border-radius:50%;overflow:hidden;
+            background:#000;border:2px solid var(--accent);
+        }
+        .logo-circle img{width:100%;height:100%;object-fit:cover;}
+        .header-titles span:first-child{
+            font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);
+        }
+        .header-titles span:last-child{
+            font-size:1rem;font-weight:600;
+        }
+        .header-tag{
+            font-size:0.75rem;text-transform:uppercase;color:var(--accent-secondary);
+            border:1px solid var(--accent-secondary);padding:3px 9px;border-radius:999px;
+        }
+        main{
+            max-width:1100px;margin:0 auto;padding:18px 14px 40px;
+        }
+        .title-block{
+            margin-bottom:16px;
+        }
+        .title-block h1{
+            font-size:1.5rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;
+        }
+        .title-block p{
+            font-size:0.9rem;color:var(--text-muted);
+        }
+        .grid{
+            display:grid;grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+            gap:14px;
+        }
+        .card{
+            background:var(--bg-card);
+            border-radius:10px;border:1px solid var(--border-soft);
+            padding:14px 13px;margin-bottom:12px;
+        }
+        .card h2{
+            font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;
+        }
+        .card small{
+            display:block;font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;
+        }
+        .card p{font-size:0.88rem;color:var(--text-muted);}
+        ul.clean{list-style:none;padding-left:0;margin-top:6px;}
+        ul.clean li{
+            position:relative;padding-left:14px;
+            font-size:0.86rem;color:var(--text-muted);margin-bottom:3px;
+        }
+        ul.clean li::before{
+            content:"▸";position:absolute;left:0;color:var(--accent-secondary);
+        }
+        .tag-row{
+            display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;
+        }
+        .tag{
+            font-size:0.75rem;border-radius:999px;padding:3px 9px;
+            border:1px solid #2b3240;background:#070a11;color:var(--text-muted);
+        }
+        .tag-important{
+            border-color:var(--accent);color:var(--accent);
+        }
+        .module-grid{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+            gap:12px;
+            margin-top:8px;
+        }
+        .module{
+            background:var(--bg-card-soft);
+            border-radius:8px;
+            border:1px solid var(--border-soft);
+            padding:10px;
+        }
+        .module h3{
+            font-size:0.9rem;text-transform:uppercase;letter-spacing:1px;
+            margin-bottom:4px;color:var(--accent-secondary);
+        }
+        .module p{
+            font-size:0.82rem;color:var(--text-muted);
+        }
+        footer{
+            text-align:center;font-size:0.75rem;color:var(--text-muted);
+            padding:14px;border-top:1px solid var(--border-soft);background:#04060a;
+        }
+        @media(max-width:780px){
+            .grid{grid-template-columns:minmax(0,1fr);}
+        }
+        @media(max-width:520px){
+            .header-inner{flex-direction:column;align-items:flex-start;}
+            main{padding-inline:10px;}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="img/SPVV-LOGO_GTI.png" alt="Logo GTI">
+            </div>
+            <div class="header-titles">
+                <span>Formations officielles</span>
+                <span>GTI – Groupe Tactique d’Intervention</span>
+            </div>
+        </div>
+        <div class="header-tag">SPVV Verscity •</div>
+    </div>
+</header>
+
+<main>
+    <div class="title-block">
+        <h1>Formations GTI</h1>
+        <p>Liste des principaux modules d’entraînement pour les membres et recrues GTI.
+           Utilisable comme planning de formation .</p>
+    </div>
+
+    <div class="grid">
+        <section>
+            <div class="card">
+                <h2>Parcours de base</h2>
+                <small>Modules obligatoires pour toute recrue</small>
+                <div class="module-grid">
+                    <div class="module">
+                        <h3>FT-01 • Entrées de bâtiment</h3>
+                        <p>Apprentissage des entrées simples, croisées et en angle. 
+                           Travail du placement, du suivi et des annonces vocales.</p>
+                    </div>
+                    <div class="module">
+                        <h3>FT-02 • Couvertures &amp; positions</h3>
+                        <p>Gestion des angles, couloirs, pièces ouvertes. 
+                           Correction des défauts fréquents.</p>
+                    </div>
+                    <div class="module">
+                        <h3>FT-03 • Radio &amp; discipline</h3>
+                        <p>Messages courts, formats radio, annonces propres, 
+                           discipline radio stricte.</p>
+                    </div>
+                    <div class="module">
+                        <h3>FT-04 • ROE &amp; décisions</h3>
+                        <p>Études de cas, quand tirer, quand patienter, 
+                           analyse des décisions d’unité.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Modules avancés</h2>
+                <small>Pour opérateurs confirmés</small>
+                <div class="module-grid">
+                    <div class="module">
+                        <h3>FA-01 • Multi-entrées</h3>
+                        <p>Coordination de 2 équipes sur 2 points d’entrée. 
+                           Synchronisation radio et top départ.</p>
+                    </div>
+                    <div class="module">
+                        <h3>FA-02 • Otage &amp; négociation</h3>
+                        <p>Roleplay complet avec négociateur, 
+                           mise en tension et décision dans l’urgence.</p>
+                    </div>
+                    <div class="module">
+                        <h3>FA-03 • Conditions nocturnes</h3>
+                        <p>Interventions de nuit, faible visibilité, 
+                           stress et communications limitées.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="card">
+                <h2>Organisation des sessions</h2>
+                <small>Conseils pour encadrants</small>
+                <ul class="clean">
+                    <li>Annonce de la formation (heure, durée prévue, niveau requis).</li>
+                    <li>Briefing court : objectif, lieu, règles spécifiques.</li>
+                    <li>Exercices pratiques répétés plusieurs fois.</li>
+                    <li>Débrief final : points positifs, erreurs, axes d’amélioration.</li>
+                </ul>
+                <div class="tag-row">
+                    <span class="tag">Toujours garder un ton </span>
+                    <span class="tag">Privilégier la pédagogie</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Validation &amp; suivi</h2>
+                <small>Comment valider une recrue</small>
+                <ul class="clean">
+                    <li>Assiduité aux séances.</li>
+                    <li>Progression visible au fil des sessions.</li>
+                    <li>Capacité à expliquer ses actions.</li>
+                    <li>Respect constant des ROE et des consignes radio.</li>
+                </ul>
+                <div class="tag-row">
+                    <span class="tag-important">Validation = décision du staff GTI</span>
+                    <span class="tag">Suivi recommandé dans un tableau externe.</span>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer>
+    Formations GTI – SPVV Verscity • Support , aucune valeur opérationnelle réelle.
+</footer>
+</body>
+</html>

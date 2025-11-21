@@ -1,0 +1,725 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recrutement Officiel GTI - SPVV</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<a class="btn-ghost" href="documentation_gti.html" target="_blank">
+    📘 Documentation GTI
+</a>
+
+<a class="btn-ghost" href="formation_gti.html" target="_blank">
+    🎯 Formations GTI
+</a>
+
+<a class="btn-ghost" href="historique_gti.html" target="_blank">
+    🕰️ Historique de l’unité
+</a>
+
+    <style>
+        :root {
+            --bg-main: #05070a;
+            --bg-card: #11151c;
+            --bg-card-soft: #141922;
+            --accent: #f5b300;
+            --accent-danger: #e63946;
+            --text-main: #f5f5f5;
+            --text-muted: #a0a4b0;
+            --border-soft: #252a36;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+            background: radial-gradient(circle at top, #151b25 0%, #05070a 55%, #000000 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* ---------- HEADER / HERO ---------- */
+
+        header {
+            border-bottom: 1px solid var(--border-soft);
+            background: linear-gradient(135deg, #05070a 0%, #10141e 50%, #05070a 100%);
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 10px 16px;
+            gap: 10px;
+        }
+
+        .topbar-left {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-circle {
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: #000;
+            border: 2px solid var(--accent);
+            flex-shrink: 0;
+        }
+
+        .logo-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .topbar-title {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .topbar-title span:first-child {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--text-muted);
+        }
+
+        .topbar-title span:last-child {
+            font-size: 1.05rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .topbar-tag {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            border: 1px solid var(--accent);
+            padding: 4px 10px;
+            border-radius: 999px;
+            color: var(--accent);
+            white-space: nowrap;
+        }
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 28px 16px 32px;
+            display: grid;
+            grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
+            gap: 24px;
+            align-items: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            padding: 4px 10px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero-badge-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #20c997;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.9rem, 4vw, 2.7rem);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            font-size: 0.96rem;
+            color: var(--text-muted);
+            max-width: 520px;
+            margin-bottom: 18px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .btn-primary, .btn-ghost {
+            padding: 10px 22px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn-primary {
+            background: var(--accent-danger);
+            color: #fff;
+        }
+
+        .btn-primary:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn-ghost {
+            background: transparent;
+            border: 1px solid var(--border-soft);
+            color: var(--text-muted);
+        }
+
+        .btn-ghost span {
+            font-size: 1.1rem;
+        }
+
+        .hero-small {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+
+        .hero-visual {
+            position: relative;
+            min-height: 210px;
+        }
+
+        .hero-card {
+            background: linear-gradient(145deg, #101520, #1a2030);
+            border-radius: 12px;
+            padding: 16px;
+            border: 1px solid var(--border-soft);
+            box-shadow: 0 22px 40px rgba(0, 0, 0, 0.65);
+        }
+
+        .hero-card-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .hero-card-title {
+            font-size: 0.86rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-card-tag {
+            font-size: 0.7rem;
+            color: var(--accent);
+            text-transform: uppercase;
+        }
+
+        .hero-card-metrics {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 12px;
+        }
+
+        .metric {
+            background: #0f131c;
+            border-radius: 8px;
+            padding: 8px;
+            border: 1px solid #1f2633;
+        }
+
+        .metric-label {
+            font-size: 0.65rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+        }
+
+        .metric-value {
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+
+        .hero-mini-map {
+            margin-top: 10px;
+            background: radial-gradient(circle at top, #273047 0, #141928 40%, #05070a 100%);
+            border-radius: 10px;
+            padding: 10px;
+            border: 1px solid #222839;
+            font-size: 0.7rem;
+        }
+
+        .mini-map-label {
+            font-weight: 600;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mini-map-grid {
+            font-family: "Consolas", "Courier New", monospace;
+            white-space: pre;
+            background: rgba(0, 0, 0, 0.38);
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #252b3a;
+        }
+
+        /* ---------- MAIN LAYOUT ---------- */
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 24px 16px 50px;
+        }
+
+        .section {
+            background: var(--bg-card);
+            border-radius: 10px;
+            border: 1px solid var(--border-soft);
+            padding: 20px 18px;
+            margin-bottom: 18px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 6px;
+            margin-bottom: 6px;
+        }
+
+        .section h2 {
+            font-size: 1.15rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-kicker {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            color: var(--text-muted);
+        }
+
+        .section p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        .two-col {
+            display: grid;
+            grid-template-columns: minmax(0, 1.4fr) minmax(0, 1.1fr);
+            gap: 18px;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+            margin-top: 8px;
+        }
+
+        .bullet-list li {
+            padding-left: 16px;
+            position: relative;
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 4px;
+        }
+
+        .bullet-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+            gap: 12px;
+            margin-top: 10px;
+        }
+
+        .role-card {
+            background: var(--bg-card-soft);
+            border-radius: 8px;
+            border: 1px solid var(--border-soft);
+            padding: 10px 10px 9px;
+        }
+
+        .role-card h3 {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 4px;
+            color: var(--accent);
+        }
+
+        .role-card p {
+            font-size: 0.82rem;
+            color: var(--text-muted);
+        }
+
+        .tagline {
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            margin-top: 4px;
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .pill {
+            font-size: 0.75rem;
+            border-radius: 999px;
+            padding: 4px 10px;
+            border: 1px solid #252a35;
+            background: #0b0f17;
+            color: var(--text-muted);
+        }
+
+        .pill--alert {
+            border-color: var(--accent-danger);
+            color: var(--accent-danger);
+        }
+
+        .cta-box {
+            text-align: center;
+            padding: 18px 12px 16px;
+            background: #141826;
+            border-radius: 10px;
+            border: 1px solid var(--accent);
+        }
+
+        .cta-box p {
+            font-size: 0.9rem;
+            margin-bottom: 12px;
+        }
+
+        .cta-note {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            margin-top: 6px;
+        }
+
+        footer {
+            text-align: center;
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            padding: 16px;
+            border-top: 1px solid var(--border-soft);
+            background: #05070a;
+        }
+
+        /* ---------- RESPONSIVE ---------- */
+
+        @media (max-width: 820px) {
+            .hero-inner {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .hero-visual {
+                order: -1;
+            }
+
+            .two-col {
+                grid-template-columns: minmax(0, 1fr);
+            }
+
+            .topbar {
+                flex-direction: row;
+                align-items: center;
+            }
+
+            .topbar-tag {
+                font-size: 0.7rem;
+                padding: 3px 8px;
+            }
+        }
+
+        @media (max-width: 520px) {
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .hero-buttons a,
+            .hero-buttons button {
+                justify-content: center;
+                width: 100%;
+            }
+
+            main {
+                padding-inline: 12px;
+            }
+
+            .section {
+                padding-inline: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="topbar">
+        <div class="topbar-left">
+            <div class="logo-circle">
+                <!-- Logo GTI -->
+                <!-- Mets ici le fichier de ton logo, par ex. logo_gti.png -->
+                <img src="img/SPVV-LOGO_GTI.png" alt="Logo GTI SPVV">
+            </div>
+            <div class="topbar-title">
+                <span>Service de Police de Verscity</span>
+                <span>Groupe Tactique d’Intervention – GTI</span>
+            </div>
+        </div>
+        <div class="topbar-tag">
+            Recrutement  • Unité d’élite
+        </div>
+    </div>
+
+    <div class="hero">
+        <div class="hero-inner">
+            <div>
+                <div class="hero-badge">
+                    <span class="hero-badge-dot"></span> Session de recrutement GTI ouverte
+                </div>
+                <h1><span>Rejoignez</span> le GTI SPVV</h1>
+                <p class="hero-subtitle">
+                    Sélection exigeante, dossiers complets, scénarios avancés. Chaque décision compte.
+                    Vous penserez plusieurs fois : <em>« Est-ce que je veux vraiment en faire partie ? »</em>
+                </p>
+                <div class="hero-buttons">
+                    <!-- LIEN DU QUESTIONNAIRE ICI -->
+                    <a class="btn-primary" href="LIEN_QUESTIONNAIRE_ICI" target="_blank">
+                        ▶ Remplir le questionnaire officiel
+                    </a>
+                    <a class="btn-ghost" href="#tests">
+                        <span>☰</span> Voir les conditions d’accès
+                    </a>
+                </div>
+                <div class="hero-small">
+                    Dossier incomplet = refus automatique • être sérieux uniquement.
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="hero-card">
+                    <div class="hero-card-top">
+                        <div>
+                            <div class="hero-card-title">Profil d’un opérateur GTI</div>
+                            <div class="hero-card-tag">SPVV • Verscity</div>
+                        </div>
+                        <img src="img/verscity_police_logo.png" alt="Logo SPVV" style="height:40px; width:auto;">
+                    </div>
+
+                    <div class="hero-card-metrics">
+                        <div class="metric">
+                            <div class="metric-label">Discipline</div>
+                            <div class="metric-value">100%</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Sang-froid</div>
+                            <div class="metric-value">Élevé</div>
+                        </div>
+                        <div class="metric">
+                            <div class="metric-label">Travail d’équipe</div>
+                            <div class="metric-value">Obligatoire</div>
+                        </div>
+                    </div>
+
+                    <div class="hero-mini-map">
+                        <div class="mini-map-label">
+                            <span>Carte tactique – Ex. entrepôt SPVV</span>
+                            <span style="color:var(--accent); font-size:0.7rem;">Schéma simplifié</span>
+                        </div>
+<pre class="mini-map-grid">
+┌──────────────┐
+│  SALLE 1 []  │
+├──────┬───────┤
+│ S2   │BUREAU │
+├──────┴───────┤
+│   HANGAR     │
+└─────ENTRÉE &gt;─┘
+</pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</header>
+
+<main>
+
+    <!-- A PROPOS -->
+    <section class="section" id="apropos">
+        <div class="section-header">
+            <h2>Mission du GTI</h2>
+            <span class="section-kicker">Interventions à haut risque • être sérieux</span>
+        </div>
+        <p>
+            Le Groupe Tactique d’Intervention intervient lors des situations les plus critiques : prises d’otages,
+            arrestations à haut risque, suspects lourdement armés, protections rapprochées et opérations coordonnées.
+            Chaque opérateur GTI représente l’exigence maximale du SPVV.
+        </p>
+        <p class="tagline">
+            Vous n’êtes pas ici pour “faire joli” : vous êtes là pour gérer ce que les autres ne peuvent pas gérer.
+        </p>
+    </section>
+
+    <!-- ROLES -->
+    <section class="section">
+        <div class="section-header">
+            <h2>Rôles au sein du GTI</h2>
+            <span class="section-kicker">Votre place dans l’unité</span>
+        </div>
+        <p>
+            Chaque membre occupe un rôle spécifique. Vous devez connaître votre fonction, mais aussi comprendre
+            celles des autres pour que l’équipe fonctionne comme un seul bloc.
+        </p>
+
+        <div class="role-grid">
+            <article class="role-card">
+                <h3>Leader</h3>
+                <p>Prise de décisions, gestion radio, choix des entrées, validation ou refus des actions. 
+                   Responsable de l’équipe du début à la fin de l’opération.</p>
+            </article>
+            <article class="role-card">
+                <h3>Breacher</h3>
+                <p>Ouverture des accès (portes, portails, verrous). Premier dans la ligne, il encaisse le risque
+                   maximal lors de l’entrée en bâtiment.</p>
+            </article>
+            <article class="role-card">
+                <h3>Technicien</h3>
+                <p>Gestion du matériel tactique : caméras, systèmes, désamorçage simplifié, verrouillages, analyse rapide
+                   de la scène. Soutien direct au leader.</p>
+            </article>
+            <article class="role-card">
+                <h3>Assault / Entry</h3>
+                <p>Équipe principale d’assaut. Nettoyage des pièces, sécurisation des couloirs, gestion des contacts
+                   hostiles ou suspects.</p>
+            </article>
+            <article class="role-card">
+                <h3>Scout / Observation</h3>
+                <p>Repérage des entrées, observation discrète, remontée d’informations en continu sur la position
+                   des suspects et des civils.</p>
+            </article>
+        </div>
+    </section>
+
+    <!-- TESTS -->
+    <section class="section" id="tests">
+        <div class="section-header">
+            <h2>Processus de sélection</h2>
+            <span class="section-kicker">Tests, scénarios, connaissances</span>
+        </div>
+
+        <div class="two-col">
+            <div>
+                <p>
+                    Le recrutement GTI n’est pas là pour être “fun”, mais pour filtrer les candidats réellement prêts
+                    à assumer ce rôle. Attendez-vous à des tests longs, précis, parfois pénibles.
+                </p>
+                <ul class="bullet-list">
+                    <li>Tests tactiques GTA (entrées, couvertures, communication radio).</li>
+                    <li>Tests psychologiques : sang-froid, prise de décision, gestion du stress.</li>
+                    <li>Connaissances : rôles, positions, ROE, signaux radio.</li>
+                    <li>Scénarios où chaque erreur a une conséquence.</li>
+                </ul>
+                <div class="pill-row">
+                    <span class="pill pill--alert">Dossier bâclé = refus automatique</span>
+                    <span class="pill">ton sérieux uniquement</span>
+                    <span class="pill">Communication claire obligatoire</span>
+                </div>
+            </div>
+
+            <div>
+<pre class="mini-map-grid">
+Entrée couloir (ASCII)
+┌──────────────┐
+│ A &gt;   &gt; B    │
+│   &gt;   &gt; C    │
+│ D &lt;   &lt; E    │
+└──────────────┘
+
+Positions couverture :
+- A : angle gauche
+- B : centre
+- C : angle droit
+</pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- CANDIDATURE -->
+    <section class="section">
+        <div class="cta-box">
+            <h2 style="text-transform:uppercase; letter-spacing:1px; margin-bottom:6px;">
+                Candidater au GTI – Questionnaire Officiel
+            </h2>
+            <p>
+                Le lien ci-dessous ouvre le <strong>questionnaire officiel de sélection GTI</strong>.
+                Assurez-vous d’avoir le temps, d’être concentré et prêt à répondre sérieusement à chaque question.
+            </p>
+            <!-- LIEN DU QUESTIONNAIRE A MODIFIER ICI -->
+            <a class="btn-primary" href="LIEN_QUESTIONNAIRE_ICI" target="_blank">
+                ▶ Accéder au questionnaire GTI
+            </a>
+            <div class="cta-note">
+                Cherche dans le code <code>LIEN_QUESTIONNAIRE_ICI</code> pour remplacer facilement par ton URL.
+            </div>
+            <a class="btn-ghost" href="documentation_gti.html" target="_blank">
+    📘 Ouvrir la documentation GTI
+</a>
+
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    GTI – Groupe Tactique d’Intervention SPVV Verscity • Support de rôle-play uniquement, sans lien avec une entité réelle.
+</footer>
+
+</body>
+</html>

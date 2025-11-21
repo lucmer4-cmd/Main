@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Documentation GTI - SPVV (Preview)</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        :root {
+            --bg-main:#05070a;
+            --bg-card:#11151c;
+            --bg-card-soft:#161b25;
+            --accent:#f5b300;
+            --accent-secondary:#4dabf7;
+            --text-main:#f5f5f5;
+            --text-muted:#a0a4b0;
+            --border-soft:#252a36;
+        }
+        *{box-sizing:border-box;margin:0;padding:0;}
+        body{
+            font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+            background:#05070a;
+            color:var(--text-main);
+            line-height:1.6;
+        }
+        a{color:inherit;text-decoration:none;}
+        header{
+            border-bottom:1px solid var(--border-soft);
+            background:linear-gradient(135deg,#05070a,#111523);
+            padding:10px 16px;
+        }
+        .header-inner{
+            max-width:1100px;margin:0 auto;
+            display:flex;align-items:center;justify-content:space-between;gap:10px;
+        }
+        .header-left{display:flex;align-items:center;gap:10px;}
+        .logo-circle{
+            width:46px;height:46px;border-radius:50%;overflow:hidden;
+            background:#000;border:2px solid var(--accent);
+        }
+        .logo-circle img{width:100%;height:100%;object-fit:cover;}
+        .header-titles span:first-child{
+            font-size:0.78rem;text-transform:uppercase;letter-spacing:2px;color:var(--text-muted);
+        }
+        .header-titles span:last-child{
+            font-size:1rem;font-weight:600;
+        }
+        .header-tag{
+            font-size:0.75rem;text-transform:uppercase;color:var(--accent-secondary);
+            border:1px solid var(--accent-secondary);padding:3px 9px;border-radius:999px;
+        }
+        main{
+            max-width:1100px;margin:0 auto;padding:18px 14px 40px;
+        }
+        .title-block{
+            margin-bottom:16px;
+        }
+        .title-block h1{
+            font-size:1.5rem;text-transform:uppercase;letter-spacing:2px;margin-bottom:4px;
+        }
+        .title-block p{
+            font-size:0.9rem;color:var(--text-muted);
+        }
+        .grid{
+            display:grid;grid-template-columns: minmax(0,1.2fr) minmax(0,1fr);
+            gap:14px;
+        }
+        .card{
+            background:var(--bg-card);
+            border-radius:10px;border:1px solid var(--border-soft);
+            padding:14px 13px;margin-bottom:12px;
+        }
+        .card h2{
+            font-size:1rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;
+        }
+        .card small{
+            display:block;font-size:0.75rem;color:var(--text-muted);margin-bottom:6px;
+        }
+        .card p{font-size:0.88rem;color:var(--text-muted);}
+        ul.clean{list-style:none;padding-left:0;margin-top:6px;}
+        ul.clean li{
+            position:relative;padding-left:14px;
+            font-size:0.86rem;color:var(--text-muted);margin-bottom:3px;
+        }
+        ul.clean li::before{
+            content:"▸";position:absolute;left:0;color:var(--accent-secondary);
+        }
+        pre.schema{
+            font-family:"Consolas","Courier New",monospace;
+            white-space:pre;
+            background:var(--bg-card-soft);
+            border-radius:8px;border:1px solid var(--border-soft);
+            padding:8px;font-size:0.8rem;color:var(--text-main);
+            overflow-x:auto;
+            margin-top:6px;
+        }
+        .tag-row{
+            display:flex;flex-wrap:wrap;gap:6px;margin-top:6px;
+        }
+        .tag{
+            font-size:0.75rem;border-radius:999px;padding:3px 9px;
+            border:1px solid #2b3240;background:#070a11;color:var(--text-muted);
+        }
+        .tag-important{
+            border-color:var(--accent);color:var(--accent);
+        }
+        footer{
+            text-align:center;font-size:0.75rem;color:var(--text-muted);
+            padding:14px;border-top:1px solid var(--border-soft);background:#04060a;
+        }
+        @media(max-width:780px){
+            .grid{grid-template-columns:minmax(0,1fr);}
+        }
+        @media(max-width:520px){
+            .header-inner{flex-direction:column;align-items:flex-start;}
+            main{padding-inline:10px;}
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="header-inner">
+        <div class="header-left">
+            <div class="logo-circle">
+                <img src="img/SPVV-LOGO_GTI.png" alt="Logo GTI">
+            </div>
+            <div class="header-titles">
+                <span>Documentation interne</span>
+                <span>GTI – Groupe Tactique d’Intervention</span>
+            </div>
+        </div>
+        <div class="header-tag">Référence • Ville de Verscity </div>
+    </div>
+</header>
+
+<main>
+    <div class="title-block">
+        <h1>Documentation GTI</h1>
+        <p>Positions, rôles, règles d’engagement, radio et cartes . 
+           Guide destiné aux membres et candidats GTI/SPVV.</p>
+    </div>
+
+    <div class="grid">
+        <section>
+            <div class="card">
+                <h2>Rôles GTI</h2>
+                <small>Comprendre qui fait quoi</small>
+                <ul class="clean">
+                    <li><strong>Leader :</strong> commandement, décisions, radio principale.</li>
+                    <li><strong>Breacher :</strong> ouvertures de portes / entrées initiales.</li>
+                    <li><strong>Technicien :</strong> désamorçage simplifié, caméras.</li>
+                    <li><strong>Assault / Entry :</strong> équipe d’assaut, nettoyage et sécurisation.</li>
+                    <li><strong>Scout / Observation :</strong> repérage, visuels, informations en continu.</li>
+                </ul>
+                <div class="tag-row">
+                    <span class="tag">Connaître son rôle</span>
+                    <span class="tag">Savoir remplacer un collègue</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Règles d’engagement (ROE)</h2>
+                <small>Cadre à respecter en intervention</small>
+                <ul class="clean">
+                    <li>Identifier la menace avant toute action (pas de tir “par réflexe”).</li>
+                    <li>Priorité : civils &gt; agents &gt; suspects.</li>
+                    <li>Utiliser une force proportionnelle à la menace.</li>
+                    <li>Prévenir avant d’entrer : annonce radio .</li>
+                    <li>Neutraliser ≠ exécuter : objectif = mettre fin au danger.</li>
+                </ul>
+                <div class="tag-row">
+                    <span class="tag tag-important">ROE violée = sanction </span>
+                    <span class="tag">Le leader valide l’engagement</span>
+                </div>
+            </div>
+
+            <div class="card">
+                <h2>Positions tactiques – Rappel</h2>
+                <small>Schémas simplifiés ASCII</small>
+                <p>Les schémas ci-dessous sont des représentations pour s’aligner en jeu :</p>
+<pre class="schema">
+STACK (file indienne, entrée porte)
+[ MUR ]
+  1 >
+  2 >
+  3 >
+  4 >
+
+WEDGE (triangle)
+   1
+ 2   3
+
+LIGNE (couloir / hangar)
+1  2  3  4
+</pre>
+            </div>
+        </section>
+
+        <section>
+            <div class="card">
+                <h2>Radio &amp; Communication</h2>
+                <small>Clarté avant tout</small>
+                <p>Quelques exemples de messages radio corrects :</p>
+                <ul class="clean">
+                    <li>« GTI Leader pour Centrale, en approche de la scène. »</li>
+                    <li>« GTI 2, en position entrée nord, en attente de vos ordres. »</li>
+                    <li>« Contact armé étage 2, côté escalier est. »</li>
+                    <li>« Otage sécurisé, demande évacuation médicale. »</li>
+                </ul>
+<pre class="schema">
+Test d’écoute radio (exemple)
+Message brouillé :
+"Sierra... trois... con...tact... étage..."
+Réponse attendue :
+"Sierra 3 au contact à l'étage."
+</pre>
+            </div>
+
+            <div class="card">
+                <h2>Cartes tactiques – Exemples</h2>
+                <small>Non réalistes, usage purement à usage tactique</small>
+<pre class="schema">
+Banque type Fleeca
+┌───────────────────────┐
+│   HALL D'ACCUEIL []   │
+├───────────┬───────────┤
+│ BUREAU    │ COMPTOIR  │
+├───────────┴─────┬─────┤
+│  SALLE COFFRE   │ AR  │
+└─────────────────┴─────┘
+    Entrée rue  >
+</pre>
+<pre class="schema">
+Entrepôt Sandy Shores
+┌───────────┬───────────┐
+│ ZONE Cx   │  BUREAU   │
+├───────────┴───────────┤
+│  HANGAR / ATELIER     │
+│  VEHICULES          │
+└───────ENTRÉE >────────┘
+</pre>
+                <p style="font-size:0.8rem;color:var(--text-muted); margin-top:4px;">
+                    Ces schémas peuvent être montrés en briefing avant mission pour visualiser la scène.
+                </p>
+            </div>
+        </section>
+    </div>
+
+    <div class="card">
+        <h2>Tests &amp; entraînements GTI</h2>
+        <small>Exemples de modules </small>
+        <ul class="clean">
+            <li>Parcours « entrées de bâtiment » : single stack, croisée, angle.</li>
+            <li>Module « sang-froid » : otage + suspect agressif + pression radio.</li>
+            <li>Module « décision » : plusieurs choix possibles, tous expliqués en débrief.</li>
+            <li>Contrôle écrit : rôles GTI, ROE, positions, alphabet OTAN.</li>
+        </ul>
+<pre class="schema">
+Scénario simple
+- Lieu : petite banque Fleeca
+- Objectif : sécuriser 2 civils, 1 suspect armé
+- Étapes :
+  1) Observation extérieure
+  2) Mise en place du stack
+  3) Entrée coordonnée
+  4) Communication radio pendant la progression
+  5) Débrief final (erreurs / points forts)
+</pre>
+    </div>
+</main>
+
+<footer>
+    Documentation GTI – SPVV Verscity • Outil interne de rôle-play, aucune valeur réelle opérationnelle.
+</footer>
+</body>
+</html>
